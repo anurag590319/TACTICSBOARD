@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Soccer Tactics Pitch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="soccer-pitch-container">
+        <div class="soccer-pitch" id="soccer-pitch"></div>
+        <div class="team-search-container">
+            <!-- Left section (Select Your Team) -->
+            <div class="team-section">
+                <div class="search-container">
+                    <input type="text" id="team-name-search" placeholder="Enter Your Team Name">
+                    <i class="fa fa-search search-icon" id="search-team-icon"></i>
+                </div>
+            </div>
+
+            <!-- Right section (Select Opponent Team) -->
+            <div class="opponent-section">
+                <div class="search-container">
+                    <input type="text" id="opponent-name-search" placeholder="Enter Opponent Team Name">
+                    <i class="fa fa-search search-icon" id="search-opponent-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tactics-panel">
+        <div class="tactics-buttons">
+            <button type="button" id="tactic1-button"> Pass Kepper</button>
+            <button type="button" id="tactic2-button"> Pass Striker</button>
+            <button type="button" id="tactic3-button">Pass Winger</button>
+        </div>
+    </div>
+
+    <script type="module" src="soccer_team_api.js"></script>
+    <script type="module" src="tactics.js"></script>
+    <script type="module" src="init.js"></script>
+</body>
+</html>
