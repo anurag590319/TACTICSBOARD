@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background: url('bg.jpg') no-repeat center center fixed; /* Image background */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    color: #ffffff; /* Adjust text color for readability */
+}
+
+.soccer-pitch-container {
+    width: 1000px;
+    height: 700px;
+    margin-top: 120px;
+}
+
+.soccer-pitch {
+    width: 100%;
+    height: 100%;
+    background: url('footballpitch.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Player buttons */
+button.player-button {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: grab;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: top 1s ease-in-out, left 1s ease-in-out;
+}
+
+button.player-button.blue {
+    background: linear-gradient(145deg, #4d88ff, #2a4ba3);
+}
+
+button.player-button.red {
+    background: linear-gradient(145deg, #ff4d4d, #a32a2a);
+}
+
+button.player-button:active {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Soccer ball */
+.soccer-ball {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: grab;
+    transition: top 1s ease-in-out, left 1s ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+.soccer-ball:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Shared styles for both sections */
+.team-section, .opponent-section {
+    position: absolute;
+    top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Specific positions for each section */
+.team-section {
+    left: 10px;
+}
+
+.opponent-section {
+    right: 10px;
+}
+
+/* Input fields */
+.team-section input,
+.opponent-section input {
+    width: 200px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect on input fields */
+.team-section input:focus,
+.opponent-section input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+
+/* Tactics panel */
+.tactics-panel {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #0a1c5c, #095e22);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 950px;
+    z-index: 1000;
+}
+
+.tactics-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tactics-buttons button {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #4caf50, #388e3c);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tactics-buttons button:hover {
+    background: linear-gradient(145deg, #66bb6a, #388e3c);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tactics-buttons button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .soccer-pitch-container {
+        width: 100%;
+        height: 400px; /* Adjust height for smaller screens */
+    }
+
+    .soccer-pitch {
+        width: 100%;
+        height: 100%;
+    }
+
+    .team-section, .opponent-section {
+        position: relative;
+        width: 90%;
+        margin: 10px auto;
+        left: 0;
+        right: 0;
+    }
+
+    .tactics-panel {
+        width: 95%;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .tactics-buttons button {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
